@@ -151,3 +151,8 @@ gulp.task(
     gulp.parallel("styles", "pug", "images", "fonts", "scripts")
   )
 );
+
+//Создание ветки gh-pages и загрузка туда содержимого папки dist
+gulp.task("deploy", () => {
+  return gulp.src("./dist/**/*").pipe(ghPages());
+});
