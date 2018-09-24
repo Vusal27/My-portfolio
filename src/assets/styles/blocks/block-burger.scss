@@ -1,0 +1,49 @@
+.burger {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    &__button {
+        width: 35px;
+        height: 5px;
+        background-color: white;
+        border-radius: 5px;
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            width: 35px;
+            height: 5px;
+            background-color: white;
+            border-radius: 5px;
+            position: absolute;
+            top: -12px;
+            transition: 0.5s;
+        }
+        &::after {
+            content: "";
+            display: block;
+            width: 35px;
+            height: 5px;
+            background-color: white;
+            border-radius: 5px;
+            position: absolute;
+            top: 12px;
+            transition: 0.5s;
+        }
+    }
+}
+.burger--active {
+    .burger__button {
+        background: transparent;
+    }
+    .burger__button::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    .burger__button::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+}

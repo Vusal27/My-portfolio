@@ -12,9 +12,46 @@ body {
 }
 
 .wrapper {
-  overflow: hidden;
+  overflow: visible;
+  overflow-x: hidden;
   min-height: 100%;
   position: relative;
+  color: white;
+}
+
+.section {
+  min-height: 100vh;
+}
+
+.main-content {
+  height: 100vh;
+  background: url('assets/images/bg/bg-night.jpg') 0 0 / cover no-repeat ;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 0 40px;
+  &--flex-none {
+    display: block;
+  }
+}
+
+.section-hero {
+  width: 100%;
+  background: url('assets/images/bg/bg-night.jpg') 0 0 / cover no-repeat ;
+  text-align: center;
+  background-size: 110% 700px;
+  min-height: 650px;
+  background-position-y: -50px;
+  &--works {
+    background-size: 100% 100%;
+    background-position-y: 0;
+  }
+  &--blog {
+    background-size: 100% 700px;
+    background-position-y: -150px;
+  }
 }
 
 .container {
@@ -45,4 +82,8 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0;
   padding: 0;
+}
+a {
+  text-decoration: none;
+  color: white;
 }

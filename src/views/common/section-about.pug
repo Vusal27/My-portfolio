@@ -1,0 +1,82 @@
+.section-hero
+    include header
+    .user
+        .user__avatar
+            img.avatar(src="assets/images/content/avatar.jpg", alt="avatar")      
+        .user__title
+            h2.title Гахраманов Вусал
+        .user__desc
+            h3.desc Личный сайт веб-разработчика
+    .down
+        a.down__link
+            svg.down__svg(style="width: 30px; height: 20px;")
+                use(xlink:href="assets/images/icons/sprite.svg#arrow_down")
+.section.about
+    .about__me
+        .about__title
+            h2.title.title--blog обо мне
+        .about__info
+            .user
+                .user__avatar
+                    img.avatar.avatar--about(src="assets/images/content/avatar.jpg", alt="avatar")      
+                .user__title.user__title--about
+                    h2.title.title--about кто я
+                .user__desc
+                    .user__p
+                        p Я веб разработчик из Санкт-Петербурга. Мне 24 года.Я занимаюсь разработкой современных сайтов и приложений.Мне нравится делать интересные и современные проекты.
+                    .user__p
+                        p Я веб разработчик из Санкт-Петербурга. Мне 24 года.Я занимаюсь разработкой современных сайтов и приложений.Мне нравится делать интересные и современные проекты.
+    .about__tech
+        .about__title-right
+            h2.title.title--about чем я могу быть вам полезен
+        .about__desc
+            .user__p
+                p Больше всего меня привлекает Frontend разрабока, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+        .about__skills
+            ul.skills
+                li.skills__item
+                    .skills__title
+                        h3.title Frontend
+                    .skills__list
+                        ul.skill
+                            li.skill__item
+                            li.skill__item
+                            li.skill__item
+                li.skills__item
+                    .skills__title
+                        h3.title Backend
+                    .skills__list
+                        ul.skill
+                            li.skill__item
+                            li.skill__item
+                            li.skill__item
+                            li.skill__item
+                li.skills__item
+                    .skills__title
+                        h3.title WorlFlow
+                    .skills__list
+                        ul.skill
+                            li.skill__item
+                            li.skill__item
+                            li.skill__item
+.section.map
+    img.map__marker(src="assets/images/icons/map_marker.svg")
+    .map__container
+        .contacts__layout
+            .contacts__title
+                h2.title.title--about контакты
+            .contacts__list
+                ul.contacts
+                    li.contacts__item
+                        img.contacts__svg(src="assets/images/icons/skype_n.png")
+                        .contacts__desc skype-Vusal Gakhramanov
+                    li.contacts__item
+                        img.contacts__svg(src="assets/images/icons/phone_n.svg")
+                        a.contacts__desc(href="tel:+79312009324") +7 931 200 93 24
+                    li.contacts__item
+                        img.contacts__svg(src="assets/images/icons/envelope_n.svg")
+                        a.contacts__desc(href="mailto:nuruva02@gmail.com") nuruva02@gmail.com
+                    li.contacts__item
+                        img.contacts__svg(src="assets/images/icons/map_n.svg")
+                        .contacts__desc г.Санкт-Петербург ул.Миллионная,д.1 
+    include footer

@@ -1,0 +1,13 @@
+.header {
+    position: relative;
+    &__burger {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+    &__social {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+}

@@ -1,6 +1,16 @@
 extends ../auth.layout.pug
 
+block header
+  include ../common/auth-header
 block content
-  .hello-world
-    +icon('check', 'hello-world__block')
-    .inlined-svg
+  .user
+    .user__avatar
+      img.avatar(src="assets/images/content/avatar.jpg", alt="avatar")      
+    .user__title
+      h2.title Гахраманов Вусал
+    .user__desc
+      h3.desc Личный сайт веб разработчика
+    .user__socials
+      include ../common/socials
+    .user__btns
+      include ../common/auth-nav

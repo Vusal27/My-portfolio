@@ -78,7 +78,7 @@ gulp.task("server", () => {
 // спрайт иконок
 gulp.task("svg", done => {
   return gulp
-    .src(`${config.SRC_DIR}/images/icons/*.svg`)
+    .src(`${config.SRC_DIR}/assets/images/icons/*.svg`)
     .pipe(
       $gp.svgmin({
         js2svg: {

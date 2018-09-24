@@ -1,0 +1,21 @@
+.down {
+    position: absolute;
+    z-index: 100;
+    top: 450px;
+    left: 50%;
+    transform: translate(-50%);
+    &__svg {
+        width: 30px;
+        height: 20px;
+        fill: rgba(250, 250, 250, .7);
+        &:hover {
+            fill: rgba(250, 250, 250, 1);
+        }
+    }
+    &__link {
+        width: 30px;
+        height: 20px;
+        display: block;
+        cursor: pointer;
+    }
+}

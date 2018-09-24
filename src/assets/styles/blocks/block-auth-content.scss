@@ -1,0 +1,46 @@
+.layout {
+    height: 400px;
+    width: 380px;
+    background-color: rgba(27,31,41, .5);
+    align-self: center;
+    position: relative;
+    padding: 35px 20px;
+}
+.user__title {
+  margin-top: 20px;
+  &--about {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 80px;
+      background-color: #425c66;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%,0)
+    }
+  }
+}
+.user__desc {
+  margin-top: 5px;
+}
+.user__socials {
+  margin-top: 15px;
+}
+.user__btns, .form__btns {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+}
+.user__avatar {
+  margin-bottom: 30px;
+}
+.user__p {
+  margin-bottom: 10px;
+}

@@ -9,7 +9,11 @@ html(lang="en")
     title Portfolio | welcome page
     link(rel="stylesheet", href="main.min.css")
   body
-    
-    block content
+    .wrapper
+      .main-content
+        block header
+        .layout
+          block content
+        include common/copyright
 
     script(src="auth.bundle.js")
