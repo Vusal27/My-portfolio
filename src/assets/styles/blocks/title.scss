@@ -17,4 +17,20 @@
     padding: 25px 0;
     text-transform: uppercase;
   }
+  &--form-connect {
+    @include phone() {
+      padding: 20px 0;
+    }
+  }
+  &--about {
+    padding: 20px 0;
+    @include tablet() {
+      padding: 0 0 20px;
+    }
+  }
+  &--works-name {
+    @include tablet() {
+      padding:0 0 20px; 
+    }
+  }
 }

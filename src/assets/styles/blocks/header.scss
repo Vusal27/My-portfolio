@@ -1,13 +1,22 @@
 .header {
     position: relative;
+    min-height: 85px;
     &__burger {
         position: absolute;
         top: 30px;
         right: 30px;
+        @include phone() {
+            top: 10px;
+            right: 10px;
+        }
     }
     &__social {
         position: absolute;
         top: 30px;
         left: 30px;
+        @include phone() {
+            top: 10px;
+            left: 10px;
+        }
     }
 }

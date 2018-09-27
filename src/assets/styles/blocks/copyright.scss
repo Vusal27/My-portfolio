@@ -1,4 +1,15 @@
 .copyright {
+  color: $light-grey;
+  font-weight: 300;
+  &-phone {
     color: $light-grey;
     font-weight: 300;
+    display: none;
+    @include phone() {
+      display: block;
+    }
   }
+  @include phone() {
+    display: none;
+  }
+}

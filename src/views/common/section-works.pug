@@ -13,7 +13,7 @@
                 use(xlink:href="assets/images/icons/sprite.svg#arrow_down")
 .works
     .works__bg
-        svg.works__bg-svg(style="width: 100%; height: 300px;")
+        svg.works__bg-svg(style="width: 100%;")
             use(xlink:href="assets/images/icons/sprite.svg#bg")
     .works__title
         .title.title--works мои работы
@@ -25,11 +25,18 @@
                 .desc.desc--works html,scc,javascript
             .works__view
                 button.works__button Посмотреть сайт
-        .works__right
+        .works__right.works__left--desctop
             .works__slider
                 ul.slider
                     li.slider__item.slider__item--activ
-                        img.slider__pic(src="assets/images/content/works.png", alt="pic-of-site")
+                        img.slider__pic.slider__pic--activ(src="assets/images/content/works.png", alt="pic-of-site")
+                        .slider__content
+                            .slider__name
+                                h2.title.title--works-name сайт школы онлайн образования
+                            .slider__skill
+                                .desc.desc--works html,scc,javascript
+                            .slider__view
+                                button.slider__button Посмотреть сайт
                     li.slider__item
                         button.slider__down
                             svg.slider__down-svg(style="width: 45px; height: 30px;")
@@ -48,7 +55,7 @@
             ul.comments
                 li.comments__item
                     .user
-                        .user__avatar
+                        .user__avatar.user__avatar--comment
                             img.avatar.avatar--comment(src="assets/images/content/user.jpg", alt="avatar")      
                         .user__text
                             p Этот парень проходил обучение веб-разработке не где то,а в Loftschool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
@@ -58,7 +65,7 @@
                             h3.desc - основатель Loftschool
                 li.comments__item
                     .user
-                        .user__avatar
+                        .user__avatar.user__avatar--comment
                             img.avatar.avatar--comment(src="assets/images/content/user.jpg", alt="avatar")
                         .user__text
                             p Этот парень проходил обучение веб-разработке не где то,а в Loftschool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
@@ -76,7 +83,7 @@
                     label.form-connect__block
                         input.form-connect__input(type="text" name="email" placeholder="Ваш email" required)
                     label.form-connect__block
-                        textarea.form-connect__input(type="text" name="message" placeholder="Ваше сообщение" required)
+                        textarea.form-connect__input.form-connect__input--message(type="text" name="message" placeholder="Ваше сообщение" required)
             ul.nav
                 li.nav__item.nav__item--form-connect
                     a.nav__link(href="#" type="submit") Отправить

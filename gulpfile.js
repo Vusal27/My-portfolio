@@ -11,7 +11,30 @@ const reload = browserSync.reload;
 const $webpack = require("webpack-stream");
 const webpack = require("webpack");
 const del = require("del");
-const ghPages = require('gulp-gh-pages');
+// const ghPages = require('gulp-gh-pages');
+// const postcss = require('gulp-postcss');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const pxtorem = require('postcss-pxtorem');
+
+// px to rem
+gulp.task('css', function () {
+
+    var processors = [
+        autoprefixer({
+            browsers: 'last 1 version'
+        }),
+        pxtorem({
+          propList: ["*"],
+          selectorBlackList: [":root"],
+          minPixelValue: 7
+        })
+    ];
+
+    return gulp.src(['src/assets/styles/main.scss'])
+        .pipe(postcss(processors))
+        .pipe(gulp.dest('dist/'));
+});
 
 // стили
 gulp.task("styles", () => {
@@ -157,7 +180,3 @@ gulp.task(
 gulp.task("deploy", () => {
   return gulp.src("./dist/**/*").pipe(ghPages());
 });
-// gulp.task('deploy', function() {
-//   return gulp.src(`${config.DIST_DIR}/**/*`)
-//     .pipe(ghPages());
-// });

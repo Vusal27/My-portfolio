@@ -4,7 +4,6 @@ body, html {
 
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  font-size: 16px;
   line-height: 1.42;
   color: $text-color;
   -webkit-font-smoothing: antialiased;
@@ -32,6 +31,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 25px 0 40px;
+  @include phone() {
+    padding: 10px;
+  }
   &--flex-none {
     display: block;
   }
@@ -86,4 +88,17 @@ p {
 a {
   text-decoration: none;
   color: white;
+}
+
+:root {
+  font-size: 16px;
+  @include laptop {
+      font-size: 15px;
+  }
+  @include tablet {
+      font-size: 14px; 
+  }
+  @include phone {
+      font-size: 13px;
+  }
 }

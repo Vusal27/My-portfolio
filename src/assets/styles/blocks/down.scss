@@ -4,6 +4,9 @@
     top: 450px;
     left: 50%;
     transform: translate(-50%);
+    @include phone() {
+        top: 400px;
+    }
     &__svg {
         width: 30px;
         height: 20px;
