@@ -63,9 +63,16 @@
 }
 .user__p {
   margin-bottom: 10px;
+  @include phone() {
+    font-size: 14px;
+  }
 }
 .user__text {
-  @include phone() {
+  @include tablet() {
     text-align: left;
+    margin-left: 20px;
+  }
+  @include phone() {
+    margin-left: 10px;
   }
 }

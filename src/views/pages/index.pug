@@ -1,7 +1,8 @@
 extends ../auth.layout.pug
 
-block header
-  include ../common/auth-header
+block auth-btn
+  .auth__btn
+    a.auth(href="index2.html") Авторизоваться
 block content
   .user
     .user__avatar

@@ -23,37 +23,75 @@ body {
 }
 
 .main-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.parallax {
   height: 100vh;
-  background: url('assets/images/bg/bg-night.jpg') 0 0 / cover no-repeat ;
   text-align: center;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 25px 0 40px;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   @include phone() {
-    padding: 10px;
+    padding: 0 10px;
   }
-  &--flex-none {
-    display: block;
+  &--header {
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 100px;
+  }
+  &__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateZ(-50px) scale(1.5);
+    @include tablet() {
+      transform: translateZ(-20px) scale(1.2);
+    }
+    @include phone() {
+      transform: translateZ(-10px) scale(1.1);
+    }
+  }
+  &__img {
+    position: absolute;
+    width: 110%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @include tablet() {
+      width: 150%;
+    }
+    @include phone() {
+      width: 150%;
+    }
   }
 }
 
-.section-hero {
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+
+.header {
   width: 100%;
-  background: url('assets/images/bg/bg-night.jpg') 0 0 / cover no-repeat ;
   text-align: center;
-  background-size: 110% 700px;
-  min-height: 650px;
-  background-position-y: -50px;
-  &--works {
-    background-size: 100% 100%;
-    background-position-y: 0;
-  }
-  &--blog {
-    background-size: 100% 700px;
-    background-position-y: -150px;
-  }
+  height: 100vh;
 }
 
 .container {

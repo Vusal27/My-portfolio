@@ -11,29 +11,28 @@ const reload = browserSync.reload;
 const $webpack = require("webpack-stream");
 const webpack = require("webpack");
 const del = require("del");
-// const ghPages = require('gulp-gh-pages');
-// const postcss = require('gulp-postcss');
+const ghPages = require('gulp-gh-pages');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const pxtorem = require('postcss-pxtorem');
 
 // px to rem
 gulp.task('css', function () {
-
-    var processors = [
-        autoprefixer({
-            browsers: 'last 1 version'
-        }),
-        pxtorem({
-          propList: ["*"],
-          selectorBlackList: [":root"],
-          minPixelValue: 7
-        })
-    ];
-
-    return gulp.src(['src/assets/styles/main.scss'])
-        .pipe(postcss(processors))
-        .pipe(gulp.dest('dist/'));
+  let processors = [
+    autoprefixer({
+      browsers: 'last 2 version'
+    }),
+    pxtorem({
+      // propList: ["*"],
+      // selectorBlackList: [":root"],
+      // minPixelValue: 7
+      replace: false
+    })
+  ];
+  return gulp
+    .src([`${config.DIST_DIR}/styles/main.scss`])
+    .pipe(postcss(processors))
+    .pipe(gulp.dest(`${config.DIST_DIR}`));
 });
 
 // стили
