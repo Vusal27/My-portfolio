@@ -1,7 +1,11 @@
 script(type="text/x-template")#slider-root
   .slider
-    info
-    display
+    info(
+      :work="currentWork"
+    )
+    display(
+      :work="currentWork"
+    )
     btns
     
 
@@ -9,17 +13,17 @@ script(type="text/x-template")#slider-info
   .slider__info-container
     .slider__info
       .slider__info-title
-        .subtitle Заголовок
-    .slider__info-skills One, two, three
+        .subtitle {{work,title}}
+    .slider__info-skills {{work.skills}}
     .slider__info-button
-        a(href="").iconed-button
+        a(:href="work.link").iconed-button
             .iconed-button__icon
               i.fa.fa-link
             .iconed-button__text Посмотреть сайт  
 
 script(type="text/x-template")#slider-display
   .slider__display
-    img(src="", alt="").slider__big-pic
+    img(:src="work.photo", alt="").slider__big-pic
 
 script(type="text/x-template")#slider-btns
   .slider__buttons

@@ -1,1 +1,3 @@
-import { parallax } from "./modules";
+import { parallaxfunc } from "./modules/parallax.js";
+
+parallaxfunc();

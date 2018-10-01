@@ -53,6 +53,7 @@
     margin-bottom: 30px;
   }
   &--comment {    
+    margin-bottom: 20px;
     @include tablet() {
       margin-bottom: 50px;
     }
@@ -68,8 +69,9 @@
   }
 }
 .user__text {
+  text-align: left;
+  font-size: 15px;
   @include tablet() {
-    text-align: left;
     margin-left: 20px;
   }
   @include phone() {

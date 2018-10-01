@@ -32,6 +32,7 @@
     }
   }
   &--what-about {
+    line-height: 1.1;
     @include phone() {
       font-size: 35px;
     }
@@ -47,9 +48,8 @@
     }
   }
   &--mentor {
-    @include tablet() {
-      font-size: 16px;
-    }
+    font-size: 16px;
+    font-weight: 600;
   }
   &--works {
     @include phone() {
