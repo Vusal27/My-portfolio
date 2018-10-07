@@ -25,6 +25,11 @@
         @include phone() {
             padding: 10px 10px 0;
         }
+        &--works {
+            @include tablet() {
+                background-color: rgba(59,61,69, 1);
+            }
+        }
     }
     &__items {
         display: flex;

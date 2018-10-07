@@ -71,25 +71,20 @@
     }
 }
 .what-about {
-    // background: url('assets/images/bg/bg-connect2.png') 0 0 / cover no-repeat;
     background: url('assets/images/bg/bg-connect2.png');
     background-repeat: no-repeat;
     background-size: 1800px auto;
     text-align: center;
     padding: 60px 0 185px;
-    // background-position-x: -400px;
     position: relative;
     width: 100%;
     @include tablet() {
         padding: 50px 0 230px;
-        // background-position-x: -800px;
     }
     @include phone() {
-        padding: 40px 10px 355px;
-        // background-position-x: -950px;
+        padding: 40px 10px 335px;
     }
     &__blur {
-        // background: url('assets/images/bg/bg-connect2.png') 0 0 / cover no-repeat;
         background: url('assets/images/bg/bg-connect2.png');
         background-repeat: no-repeat;
         background-size: 1800px auto;
@@ -110,12 +105,11 @@
     }
     &__connect {
         width: 50%;
-        height: 490px;
+        height: 500px;
         margin-bottom: 70px;
         position: relative;
         @include phone() {
             width: 100%;
-            height: 450px;
             margin-bottom: 40px;
         }
     }

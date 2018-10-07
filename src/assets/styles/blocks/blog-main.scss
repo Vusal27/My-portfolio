@@ -39,7 +39,6 @@
         }
     }
     &__composition {
-        text-align: right;
         display: flex;
         justify-content: flex-end;
         @include tablet() {
@@ -49,14 +48,28 @@
 }
 .composition {
     width: 270px;
+    position: sticky;
+    top: 20px;
     &__item {
         margin-bottom: 10px;
+        display: flex;
+        justify-content: flex-end;
+        &--activ {
+            .composition__link {
+                color: #0b42b0;
+                border-right: 2px solid #0b42b0;
+            }
+        }
     }
     &__link {
         display: block;
         padding: 10px 15px 10px 0;
         color: #425c66;
-        &--activ {
+        background-color: transparent;
+        text-align: right;
+        width: 100%;
+        border-right: 2px solid transparent;
+        &:hover {
             color: #0b42b0;
             border-right: 2px solid #0b42b0;
         }

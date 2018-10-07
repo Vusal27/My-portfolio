@@ -1,7 +1,11 @@
 import { blurfunc } from "./modules/blur.js";
-
 blurfunc();
 
-// import Vue from 'vue';
-// import { sliderfunc } from "./modules/slider.js";
-// sliderfunc();
+import { sliderfunc } from "./modules/slider.js";
+sliderfunc();
+
+import { preloaderfunc } from "./modules/preloader.js";
+preloaderfunc();
+
+import { burgerMenufunc } from "./modules/burger-menu.js";
+burgerMenufunc();

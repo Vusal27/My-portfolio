@@ -1,17 +1,28 @@
 extends ../auth.layout.pug
-
+block preloader
+  .preloader
+    img.loader(src="./assets/images/content/night_preloader.gif" alt="preloader")
 block auth-btn
   .auth__btn
-    a.auth(href="index2.html") Авторизоваться
+    a.auth(href="#") Авторизоваться
 block content
-  .user
-    .user__avatar
-      img.avatar(src="assets/images/content/avatar.jpg", alt="avatar")      
-    .user__title
-      h2.title Гахраманов Вусал
-    .user__desc
-      h3.desc Личный сайт веб разработчика
-    .user__socials
-      include ../common/socials
-    .user__btns
-      include ../common/auth-nav
+  .flip
+    .flip-container
+        .front
+          .layout
+            .user
+              .user__avatar
+                img.avatar(src="assets/images/content/avatar.jpg", alt="avatar")      
+              .user__title
+                h2.title Гахраманов Вусал
+              .user__desc
+                h3.desc Личный сайт веб разработчика
+              .user__socials
+                include ../common/socials
+              .user__btns
+                include ../common/auth-nav
+        .back
+          .layout
+            include ../common/auth-form
+            .form__btns
+              include ../common/auth-btns

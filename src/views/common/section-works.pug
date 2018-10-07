@@ -26,35 +26,6 @@
             .works__container
                 #slider-component
                     include slider
-            //-     .works__left
-            //-         .works__name
-            //-             h2.title.title--works-name сайт школы онлайн образования
-            //-         .works__skill
-            //-             .desc.desc--works html,scc,javascript
-            //-         .works__view
-            //-             button.works__button Посмотреть сайт
-            //-     .works__right.works__left--desctop
-            //-         .works__slider
-            //-             ul.slider
-            //-                 li.slider__item.slider__item--activ
-            //-                     img.slider__pic.slider__pic--activ(src="assets/images/content/works.png", alt="pic-of-site")
-            //-                     .slider__content
-            //-                         .slider__name
-            //-                             h2.title.title--works-name сайт школы онлайн образования
-            //-                         .slider__skill
-            //-                             .desc.desc--works html,scc,javascript
-            //-                         .slider__view
-            //-                             button.slider__button Посмотреть сайт
-            //-                 li.slider__item
-            //-                     button.slider__down
-            //-                         svg.slider__down-svg(style="width: 45px; height: 30px;")
-            //-                             use(xlink:href="assets/images/icons/sprite.svg#portf_arrow_down")
-            //-                     img.slider__pic(src="assets/images/content/second-works.png", alt="pic-of-site")
-            //-                 li.slider__item
-            //-                     button.slider__up
-            //-                         svg.slider__up-svg(style="width: 45px; height: 30px;")
-            //-                             use(xlink:href="assets/images/icons/sprite.svg#portf_arrow_up")
-            //-                     img.slider__pic(src="assets/images/content/third-works.png", alt="pic-of-site")
         .what-about
             .what-about__container
                 .what-about__title
@@ -89,10 +60,13 @@
                                 .title.title--form-connect связаться со мной
                             label.form-connect__block
                                 input.form-connect__input(type="text" name="name" placeholder="Ваше имя" required)
+                                .error
                             label.form-connect__block
                                 input.form-connect__input(type="text" name="email" placeholder="Ваш email" required)
+                                .error
                             label.form-connect__block
                                 textarea.form-connect__input.form-connect__input--message(type="text" name="message" placeholder="Ваше сообщение" required)
+                                .error
                     ul.nav.nav--works
                         li.nav__item.nav__item--form-connect
                             a.nav__link(href="#" type="submit") Отправить

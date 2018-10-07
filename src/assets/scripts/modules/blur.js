@@ -10,7 +10,6 @@ function blurfunc() {
                         posTop = -wrapper.offsetTop,
                         blurCSS = blur.style;
 
-                    blurCSS.backgroundSize = imgWidth + 'px' + ' ' + 'auto';
                     blurCSS.backgroundPosition = posLeft + 'px' + ' ' + posTop + 'px';
                 }
             }
