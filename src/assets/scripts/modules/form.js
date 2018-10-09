@@ -1,77 +1,49 @@
-const myForm = document.querySelector('.form-connect');
-const send = document.querySelector('.nav__link');
-send.addEventListener('click', event => {
-    event.preventDefault();
-    
-    if (validateForm(myForm)) {
-        const data = {
-            name: myForm.elements.name.value,
-            email: myForm.elements.email.value,
-            message: myForm.elements.message.value,
-        };
+function formfunc() {
+    const myForm = document.querySelector('.form-connect');
+    const send = document.querySelector('.nav__link');
+    send.addEventListener('click', event => {
+        event.preventDefault();
         
-        const xhr = new XMLHttpRequest();
-        xhr.responseType = 'json';
-        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-        
-        xhr.send(JSON.stringify(data));
-        // xhr.addEventListener('load', () => {
+        if (validateForm(myForm)) {
+            const data = {
+                name: myForm.elements.name.value,
+                email: myForm.elements.email.value,
+                message: myForm.elements.message.value,
+            };
             
-        //     if (xhr.status === 200) {
-        //         document.body.appendChild(openOverlayForm(xhr.response.message));
-        //     } else {
-        //         document.body.appendChild(openOverlayForm(xhr.response.message));
-        //     }
-        // });
-    }
-});
-// function openOverlayForm(content) {
-//     const overlayElement = document.createElement("div");
-//     overlayElement.classList.add("over-lay");
-//     overlayElement.addEventListener("click", e => {
-//         if (e.target === overlayElement) {
-//         closeElement.click();
-//         }
-//     });
+            const xhr = new XMLHttpRequest();
+            xhr.responseType = 'json';
+            xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            
+            xhr.send(JSON.stringify(data));
+        }
+    });
 
-//     const containerElement = document.createElement("div");
-//     containerElement.classList.add("overlay-container");
+    function validateForm(form) {
+        let valid = true;
 
-//     const contentElement = document.createElement("div");
-//     contentElement.classList.add("overlay-content");
-//     contentElement.innerHTML = content;
-
-//     const closeElement = document.createElement("button");
-//     closeElement.classList.add("button_close");
-//     closeElement.textContent = "закрыть";
-//     closeElement.addEventListener("click", function() {
-//         document.body.removeChild(overlayElement);
-//     });
-
-//     overlayElement.appendChild(containerElement);
-//     containerElement.appendChild(contentElement);
-//     containerElement.appendChild(closeElement);
-
-//     return overlayElement;
-// }
-
-function validateForm(form) {
-    let valid = true;
-
-    if (!validateformblock(form.elements.name)) {
+        if (!validateformblock(form.elements.name)) {
+            valid = false;
+        }
+        if (!validateformblock(form.elements.email)) {
         valid = false;
+        }
+        if (!validateformblock(form.elements.message)) {
+        valid = false;
+        }
+        return valid;
     }
-    if (!validateformblock(form.elements.phone)) {
-    valid = false;
+
+    function validateformblock(formblock) {
+            formblock.nextElementSibling.textContent = formblock.validationMessage;
+            formblock.nextElementSibling.style.marginTop="-15px";
+            return formblock.checkValidity();
     }
-    if (!validateformblock(form.elements.comment)) {
-    valid = false;
+
+    function clear() {
+        document.getElementsByName('myForm')[0].reset();
     }
-    return valid;
 }
 
- function validateformblock(formblock) {
-        formblock.nextElementSibling.textContent = formblock.validationMessage;
-        return formblock.checkValidity();
- }
+module.exports={ formfunc };

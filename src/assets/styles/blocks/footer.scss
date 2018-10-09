@@ -8,6 +8,10 @@
     flex-direction: column;
     justify-content: space-between;
     font-weight: 300;
+    &--about {
+        top: 100%;
+        bottom: initial;
+    }
     @include tablet() {
         height: 230px;
     }

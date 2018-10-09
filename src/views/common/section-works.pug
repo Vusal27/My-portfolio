@@ -2,10 +2,10 @@
     video.video--header(src="./assets/images/bg/night.mp4" autoplay loop)
     .parallax__layer
         img.parallax__img(src="./assets/images/bg/night_no_bg1.png", alt="mountains-parallax")
+    include burger-menu
+    include menu
     .header__social
         include header-socials
-    .header__burger
-        include burger-menu
     .header__person
         .user
             .user__avatar
@@ -71,7 +71,7 @@
                         li.nav__item.nav__item--form-connect
                             a.nav__link(href="#" type="submit") Отправить
                         li.nav__item
-                            a.nav__link.nav__link--clean(href="#") Очистить
+                            a.nav__link.nav__link--clean#clean(href="#") Очистить
                 .up
                     a.up__link
                         svg.up__svg(style="width: 30px; height: 20px;")

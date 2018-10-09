@@ -2,10 +2,19 @@
         video.video--header(src="./assets/images/bg/night.mp4" autoplay loop)
         .parallax__layer
             img.parallax__img(src="./assets/images/bg/night_no_bg1.png", alt="mountains-parallax")
+        include burger-menu
+        .navigate
+            ul.navigate__list
+                li.navigate__item
+                    a.navigate__link(href="works.html") мои работы
+                li.navigate__item
+                    a.navigate__link.navigate__link--active(href="#") блог
+                li.navigate__item
+                    a.navigate__link(href="about.html") обо мне
+                li.navigate__item
+                    a.navigate__link(href="index2.html") авторизация
         .header__social
             include header-socials
-        .header__burger
-            include burger-menu
         .header__person
             .user
                 .user__avatar

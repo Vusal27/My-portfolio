@@ -20,6 +20,9 @@
     padding: 25px 0;
     text-transform: uppercase;
   }
+  &--contacts {
+    padding: 15px 0;
+  }
   &--slider {
     @include tablet() {
       padding-top: 0;

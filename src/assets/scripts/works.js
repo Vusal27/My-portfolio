@@ -9,3 +9,6 @@ preloaderfunc();
 
 import { burgerMenufunc } from "./modules/burger-menu.js";
 burgerMenufunc();
+
+import { formfunc } from "./modules/form.js";
+formfunc();
