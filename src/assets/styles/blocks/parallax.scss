@@ -1,0 +1,52 @@
+.parallax {
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    @include phone() {
+      padding: 0 10px;
+    }
+    &--header {
+      overflow-x: hidden;
+      overflow-y: auto;
+      perspective: 100px;
+    }
+    &__layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transform: translateZ(-50px) scale(1.5);
+      @include tablet() {
+        transform: translateZ(-20px) scale(1.2);
+      }
+      @include phone() {
+        transform: translateZ(-10px) scale(1.1);
+      }
+    }
+    &__img {
+      position: absolute;
+      width: 110%;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      &--blog {
+        bottom: 30px;
+      }
+      @include tablet() {
+        width: 150%;
+      }
+      @include phone() {
+        width: 150%;
+      }
+    }
+}

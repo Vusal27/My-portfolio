@@ -55,7 +55,7 @@
                 .what-about__connect
                     .what-about__blur
                     .what-about__layout
-                        form.form-connect
+                        form.form-connect(name="myForm")
                             .form-connect__title
                                 .title.title--form-connect связаться со мной
                             label.form-connect__block
@@ -71,7 +71,7 @@
                         li.nav__item.nav__item--form-connect
                             a.nav__link(href="#" type="submit") Отправить
                         li.nav__item
-                            a.nav__link.nav__link--clean#clean(href="#") Очистить
+                            a.nav__link.nav__link--clean(type="reset" value="Очистить") Очистить
                 .up
                     a.up__link
                         svg.up__svg(style="width: 30px; height: 20px;")

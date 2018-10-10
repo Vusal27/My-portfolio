@@ -37,12 +37,28 @@ function formfunc() {
 
     function validateformblock(formblock) {
             formblock.nextElementSibling.textContent = formblock.validationMessage;
-            formblock.nextElementSibling.style.marginTop="-15px";
             return formblock.checkValidity();
     }
 
-    function clear() {
-        document.getElementsByName('myForm')[0].reset();
+
+    var clearButton = document.querySelector('.nav__link--clean');
+    var inputsForm = document.querySelectorAll('.form-connect__input');
+    clearButton.addEventListener('click', clearText);
+
+    function clearText() {
+        for (var input of inputsForm) {
+            input.value = "";
+            clearButton.style.backgroundColor = 'rgba(250, 250, 250, .1)';
+        }
+    }
+    for (var input of inputsForm) {
+        input.addEventListener('input', function (input,value) {
+            if (input.value !== '') {
+                document.querySelector('.nav__link--clean').style.backgroundColor = '#064cbd';
+            } else {
+                document.querySelector('.nav__link--clean').style.backgroundColor = 'rgba(250, 250, 250, .1)';
+            }
+        });
     }
 }
 

@@ -181,6 +181,10 @@
         }
     }
 }
+.form-connect__block {
+    display: block;
+    position: relative;
+}
 .up {
     margin-bottom: 70px;
     display: inline-block;
@@ -205,4 +209,9 @@
 .error {
     color: red;
     font-family: 'sansun', Times, serif;
+    font-size: 18px;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translate(-50%);
 }
