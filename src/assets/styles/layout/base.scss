@@ -38,9 +38,28 @@ body {
 .video {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -10px;
   bottom: 0;
   right: 0;
+  &--header, &--header--blog {
+    width: 120vw;
+    @include laptop() {
+      width: 155vw;
+    }
+    @include tablet() {
+      width: 230vw;
+    }
+    @include phone() {
+      width: 320vw;
+    }
+  }
+  &--header {
+    position: absolute;
+    top: 0;
+    &--blog {
+      margin-left: -10px;
+    }
+  }
 }
 
 .header {

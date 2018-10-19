@@ -2,6 +2,9 @@
     height: 400px;
     width: 380px;
     perspective: 1000;
+    @include phone() {
+        width: 95%;
+    }
 }
 .flip.active .flip-container {
 transform: rotateY(180deg);
@@ -16,6 +19,7 @@ backface-visibility: hidden;
 position: absolute;
 top: 0;
 left: 0;
+right: 0;
 }
 .front {
 z-index: 50;
