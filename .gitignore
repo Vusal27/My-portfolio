@@ -1,7 +1,7 @@
 node_modules
 .vscode
 .idea
+.publish
 build
 public
-publish
 dist

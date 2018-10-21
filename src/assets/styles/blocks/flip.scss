@@ -1,0 +1,29 @@
+.flip {
+    height: 400px;
+    width: 380px;
+    perspective: 1000;
+    @include phone() {
+        width: 95%;
+    }
+}
+.flip.active .flip-container {
+transform: rotateY(180deg);
+}
+.flip-container {
+transition: 1s;
+transform-style: preserve-3d;
+position: relative;
+}
+.front, .back {
+backface-visibility: hidden;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+}
+.front {
+z-index: 50;
+}
+.back {
+transform: rotateY(180deg);
+}

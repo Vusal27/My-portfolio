@@ -1,0 +1,246 @@
+// .slider {
+//     display: flex;
+//     flex-wrap: wrap;
+//     width: 100%;
+//     height: 100%;
+//     &__pic {
+//         width: 100%;
+//         height: 100%;
+//         &--activ {
+//             @include tablet() {
+//                 height: 65%;
+//             }
+//             @include phone() {
+//                 height: 50%;
+//             }
+//         }
+//     }
+//     &__item {
+//         position: relative;
+//         width: 50%;
+//         height: 30%;
+//         @include tablet() {
+//             height: 20%;
+//         }
+//         @include phone() {
+//             height: 15%;
+//         }
+//         &::before {
+//             content: "";
+//             display: block;
+//             background: rgba(179, 181, 189, .5);
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             right: 0;
+//             bottom: 0;
+//         }
+//         &:hover::before {
+//             background: rgba(179, 181, 189, .7);
+//         }
+//         &--activ {
+//             width: 100%;
+//             height: 70%;
+//             @include tablet() {
+//                 height: 80%;
+//             }
+//             @include phone() {
+//                 height: 85%;
+//             }
+//             &:hover::before {
+//                 background: rgba(179, 181, 189, .0);
+//             }
+//             &::before {
+//                 background: transparent;
+//             }
+//         }
+//     }
+//     &__content {
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         flex: 1;
+//         background-color: white;
+//         display: none;
+//         @include tablet() {
+//             display: flex;
+//             padding: 30px 0;
+//             height: 35%;
+//         }
+//         @include phone() {
+//             height: initial;
+//         }
+//     }
+//     &__name {
+//         position: relative;
+//         margin-bottom: 20px;
+//         text-align: center;
+//         &::after {
+//             content: "";
+//             display: block;
+//             height: 2px;
+//             width: 80px;
+//             background-color: #425c66;
+//             position: absolute;
+//             bottom: 0;
+//             left: 50%;
+//             transform: translate(-50%,0)
+//         }
+//     }
+//     &__skill {
+//         margin-bottom: 20px;
+//     }
+//     &__button {
+//         width: 200px;
+//         height: 50px;
+//         background: #064cbd;
+//         color: white;
+//     }
+//     &__down, &__up {
+//         background: transparent;
+//         position: absolute;
+//         width: 50px;
+//         height: 30px;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         &-svg {
+//             width: 30px;
+//             height: 20px;
+//             fill: rgba(250, 250, 250, .7);
+//             &:hover {
+//                 fill: rgba(250, 250, 250, 1);
+//             }
+//         }
+//     }
+// }
+
+
+.slider {
+    height: 100vh;
+    min-height: 650px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 70% 30%;
+    grid-template-areas: 
+        "info display"
+        "info buttons";
+    @include tablet() {
+        grid-template-columns: 100%;
+        grid-template-rows: 48% 30% 22%;
+        grid-template-areas: 
+            "display"
+            "info"
+            "buttons";
+    }
+    @include phone() {
+        grid-template-columns: 100%;
+        grid-template-rows: 45% 40% 15%;
+        grid-template-areas:
+            "display"
+            "info"
+            "buttons";
+    }
+    &__info-container {
+        grid-area: info;
+        background-color: white;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__info-title {
+        position: relative;
+        margin-bottom: 25px;
+        &::after {
+            content: "";
+            display: block;
+            height: 2px;
+            width: 80px;
+            background-color: black;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%,0)
+        }
+        @include phone() {
+           margin-bottom: 20px; 
+        }
+    }
+    &__info-skills {
+        text-transform: uppercase;
+        color: #064cbd;
+        margin-bottom: 60px;
+        @include tablet() {
+            margin-bottom: 30px;
+        }
+        @include phone() {
+            margin-bottom: 20px;
+        }
+    }
+    &__display {
+        background-color: #e3e3de;
+        grid-area: display;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__big-pic {
+        width: 100%;
+        height: 100%;
+    }
+    &__buttons {
+        grid-area: buttons;
+        display: flex;
+    }
+    &__button {
+        width: 50%;
+        position: relative;
+        &-container {
+            width: 100%;
+            height: 100%;
+        }
+        &-img-wrap, &-pic {
+            height: 100%;
+            width: 100%;
+        }
+        &-svg {
+            fill: rgba(250, 250, 250, 0.5);
+            z-index: 150;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            &-wrap {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background-color: rgba(69, 69, 69, 0.4);
+                cursor: pointer;
+                &:hover {
+                    background-color: rgba(69, 69, 69, 0.6);
+                    .slider__button-svg {
+                        fill: rgba(250, 250, 250, 1);
+                    }
+                }
+            }
+        }
+    }
+}
+.iconed-button {
+    display: flex;
+    height: 45px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    background-color: #064cbd;
+    &__icon {
+        margin-right: 10px;
+        margin-bottom: -5px;
+    }
+}

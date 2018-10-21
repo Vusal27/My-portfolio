@@ -5,6 +5,9 @@
     align-self: center;
     position: relative;
     padding: 35px 20px;
+    @include phone() {
+      width: 100%;
+    }
 }
 .user__title {
   margin-top: 20px;
@@ -13,6 +16,9 @@
     text-align: center;
     margin-bottom: 25px;
     position: relative;
+    @include tablet() {
+      margin-bottom: 20px;
+    }
     &::after {
       content: "";
       display: block;
@@ -28,6 +34,9 @@
 }
 .user__desc {
   margin-top: 5px;
+  @include phone() {
+    padding: 0 10px;
+  }
 }
 .user__socials {
   margin-top: 15px;
@@ -40,7 +49,32 @@
 }
 .user__avatar {
   margin-bottom: 30px;
+  @include phone() {
+    margin-bottom: 30px;
+  }
+  &--comment {    
+    margin-bottom: 20px;
+    @include tablet() {
+      margin-bottom: 50px;
+    }
+    @include phone() {
+      margin-bottom: 20px;
+    }
+  }
 }
 .user__p {
   margin-bottom: 10px;
+  @include phone() {
+    font-size: 14px;
+  }
+}
+.user__text {
+  text-align: left;
+  font-size: 15px;
+  @include tablet() {
+    margin-left: 20px;
+  }
+  @include phone() {
+    margin-left: 10px;
+  }
 }

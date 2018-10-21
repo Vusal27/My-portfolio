@@ -1,4 +1,29 @@
 .copyright {
+  color: $light-grey;
+  font-weight: 300;
+  white-space: nowrap;
+  &--auth {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @include phone() {
+    display: none;
+  }
+  &__phone {
     color: $light-grey;
     font-weight: 300;
+    display: none;
+    white-space: nowrap;
+    &-position {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @include phone() {
+      display: block;
+    }
   }
+}

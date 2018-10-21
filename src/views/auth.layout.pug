@@ -10,10 +10,15 @@ html(lang="en")
     link(rel="stylesheet", href="main.min.css")
   body
     .wrapper
-      .main-content
-        block header
-        .layout
-          block content
-        include common/copyright
+      block preloader
+      .parallax
+        video.video(src="./assets/images/bg/night.mp4" autoplay loop)
+        .parallax__layer
+          img.parallax__img(src="./assets/images/bg/night_no_bg1.png", alt="mountains-parallax")
+        block auth-btn
+        block content
+        .copyright.copyright--auth @ Гахраманов Вусал | создано с любовью в Loftschool | 2018
+        .copyright__phone.copyright__phone-position @ Гахраманов Вусал 
+            .copyright__phone Создано с любовью в Loftschool | 2018
 
     script(src="auth.bundle.js")

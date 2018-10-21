@@ -1,89 +1,79 @@
-.section-hero.section-hero--works
-    include header
-    .user
-        .user__avatar
-            img.avatar(src="assets/images/content/avatar.jpg", alt="avatar")      
-        .user__title
-            h2.title Гахраманов Вусал
-        .user__desc
-            h3.desc Личный сайт веб-разработчика
+.parallax.parallax--header
+    video.video--header(src="./assets/images/bg/night.mp4" autoplay loop)
+    .parallax__layer
+        img.parallax__img(src="./assets/images/bg/night_no_bg1.png", alt="mountains-parallax")
+    include burger-menu
+    include menu
+    .header__social
+        include header-socials
+    .header__person
+        .user
+            .user__avatar
+                img.avatar(src="./assets/images/content/avatar.jpg", alt="avatar")    
+            .user__title
+                h2.title.title--header Гахраманов Вусал
+            .user__desc
+                h3.desc.desc--header Личный сайт веб-разработчика
     .down
         a.down__link
             svg.down__svg(style="width: 30px; height: 20px;")
-                use(xlink:href="assets/images/icons/sprite.svg#arrow_down")
-.works
-    .works__bg
-        svg.works__bg-svg(style="width: 100%; height: 300px;")
-            use(xlink:href="assets/images/icons/sprite.svg#bg")
-    .works__title
-        .title.title--works мои работы
-    .works__container
-        .works__left
-            .works__name
-                h2.title.title--works-name сайт школы онлайн образования
-            .works__skill
-                .desc.desc--works html,scc,javascript
-            .works__view
-                button.works__button Посмотреть сайт
-        .works__right
-            .works__slider
-                ul.slider
-                    li.slider__item.slider__item--activ
-                        img.slider__pic(src="assets/images/content/works.png", alt="pic-of-site")
-                    li.slider__item
-                        button.slider__down
-                            svg.slider__down-svg(style="width: 45px; height: 30px;")
-                                use(xlink:href="assets/images/icons/sprite.svg#portf_arrow_down")
-                        img.slider__pic(src="assets/images/content/second-works.png", alt="pic-of-site")
-                    li.slider__item
-                        button.slider__up
-                            svg.slider__up-svg(style="width: 45px; height: 30px;")
-                                use(xlink:href="assets/images/icons/sprite.svg#portf_arrow_up")
-                        img.slider__pic(src="assets/images/content/third-works.png", alt="pic-of-site")
-.what-about
-    .what-about__container
-        .what-about__title
-            .title.title--what-about что обо мне говорят
-        .what-about__comments
-            ul.comments
-                li.comments__item
-                    .user
-                        .user__avatar
-                            img.avatar.avatar--comment(src="assets/images/content/user.jpg", alt="avatar")      
-                        .user__text
-                            p Этот парень проходил обучение веб-разработке не где то,а в Loftschool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                        .user__title
-                            h2.title Ковальчук Дмитрий
-                        .user__desc
-                            h3.desc - основатель Loftschool
-                li.comments__item
-                    .user
-                        .user__avatar
-                            img.avatar.avatar--comment(src="assets/images/content/user.jpg", alt="avatar")
-                        .user__text
-                            p Этот парень проходил обучение веб-разработке не где то,а в Loftschool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                        .user__title
-                            h2.title Сабанцев Владимир
-                        .user__desc
-                            h3.desc - преподаватель
-        .what-about__connect
-            .what-about__layout
-                form.form-connect
-                    .form-connect__title
-                        .title.title--form-connect связаться со мной
-                    label.form-connect__block
-                        input.form-connect__input(type="text" name="name" placeholder="Ваше имя" required)
-                    label.form-connect__block
-                        input.form-connect__input(type="text" name="email" placeholder="Ваш email" required)
-                    label.form-connect__block
-                        textarea.form-connect__input(type="text" name="message" placeholder="Ваше сообщение" required)
-            ul.nav
-                li.nav__item.nav__item--form-connect
-                    a.nav__link(href="#" type="submit") Отправить
-                li.nav__item
-                    a.nav__link.nav__link--clean(href="#") Очистить
-        .up
-            a.up__link
-                svg.up__svg(style="width: 30px; height: 20px;")
-                    use(xlink:href="assets/images/icons/sprite.svg#portf_arrow_up")
-    include footer
+                use(xlink:href="./assets/images/icons/sprite.svg#arrow_down")
+    .main-content
+        .works
+            .works__background
+            .works__title
+                .title.title--works мои работы
+            .works__container
+                #slider-component
+                    include slider
+        .what-about
+            .what-about__container
+                .what-about__title
+                    .title.title--what-about что обо мне говорят
+                .what-about__comments
+                    ul.comments
+                        li.comments__item
+                            .user
+                                .user__avatar.user__avatar--comment
+                                    img.avatar.avatar--comment(src="assets/images/content/user.jpg", alt="avatar")      
+                                .user__text
+                                    p Этот парень проходил обучение веб-разработке не где то,а в Loftschool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                                .user__title
+                                    h2.title.title--mentor Ковальчук Дмитрий
+                                .user__desc
+                                    h3.desc - основатель Loftschool
+                        li.comments__item
+                            .user
+                                .user__avatar.user__avatar--comment
+                                    img.avatar.avatar--comment(src="assets/images/content/user.jpg", alt="avatar")
+                                .user__text
+                                    p Этот парень проходил обучение веб-разработке не где то,а в Loftschool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                                .user__title
+                                    h2.title.title--mentor Сабанцев Владимир
+                                .user__desc
+                                    h3.desc - преподаватель
+                .what-about__connect
+                    .what-about__blur
+                    .what-about__layout
+                        form.form-connect(name="myForm")
+                            .form-connect__title
+                                .title.title--form-connect связаться со мной
+                            label.form-connect__block
+                                input.form-connect__input(type="text" name="name" placeholder="Ваше имя" required)
+                                .error
+                            label.form-connect__block
+                                input.form-connect__input(type="text" name="email" placeholder="Ваш email" required)
+                                .error
+                            label.form-connect__block
+                                textarea.form-connect__input.form-connect__input--message(type="text" name="message" placeholder="Ваше сообщение" required)
+                                .error
+                    ul.nav.nav--works
+                        li.nav__item.nav__item--form-connect
+                            a.nav__link(href="#" type="submit") Отправить
+                        li.nav__item
+                            a.nav__link.nav__link--clean(type="reset" value="Очистить") Очистить
+                .up
+                    a.up__link
+                        svg.up__svg(style="width: 30px; height: 20px;")
+                            use(xlink:href="assets/images/icons/sprite.svg#portf_arrow_up")
+            include footer

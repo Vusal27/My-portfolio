@@ -1,0 +1,111 @@
+.blog {
+    color: #425c66;
+    background-color: white;
+    display: flex;
+    padding-bottom: 185px;
+    position: relative;
+    @include tablet() {
+        padding-bottom: 230px;
+    }
+    @include phone() {
+        padding-bottom: 355px;
+    }
+    &__background {
+        height: 220px;
+        width: 100%;
+        position: absolute;
+        bottom: 100%;
+        background-color: white;
+        clip-path: polygon(0 0,50% 70%,100% 0,100% 100%,0 100%);
+        @include tablet() {
+            height: 130px;
+            clip-path: polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);
+        }
+        @include phone() {
+            height: 70px;
+        }
+    }
+    &__container {
+        margin-left: 100px;
+        width: 50%;
+        text-align: left;
+        @include tablet() {
+            padding: 0 20px;
+            margin-left: 0;
+            width: 100%;
+        }
+        @include phone() {
+            padding: 0 10px;
+        }
+    }
+    &__composition {
+        display: flex;
+        justify-content: flex-end;
+        @include tablet() {
+            display: none;
+        }
+    }
+}
+.composition {
+    width: 270px;
+    position: sticky;
+    top: 20px;
+    &__item {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: flex-end;
+        &--activ {
+            .composition__link {
+                color: #0b42b0;
+                border-right: 2px solid #0b42b0;
+                font-weight: 600;
+            }
+        }
+    }
+    &__link {
+        display: block;
+        padding: 10px 15px 10px 0;
+        color: #425c66;
+        background-color: transparent;
+        text-align: right;
+        width: 100%;
+        border-right: 2px solid transparent;
+        &:hover {
+            color: #0b42b0;
+            border-right: 2px solid #0b42b0;
+        }
+    }
+}
+.article {
+    padding: 60px 0;
+    border-bottom: 5px solid #ebeae1;
+    @include tablet() {
+        padding: 50px 0;
+    }
+    @include phone() {
+        padding: 30px 0;
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+    &:first-child {
+        padding-top: 0;
+    }
+    &:last-child {
+        border-bottom: none;
+    }
+    &__title {
+        margin-bottom: 25px;
+        @include tablet() {
+            margin-bottom: 20px;
+        }
+    }
+    &__data {
+        margin-bottom: 25px;
+        font-weight: 300;
+        color: #8088b0;
+        @include tablet() {
+            margin-bottom: 20px;
+        }
+    }
+}

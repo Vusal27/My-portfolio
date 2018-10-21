@@ -1,6 +1,9 @@
 .title {
   font-size: 28px;
   font-weight: 500;
+  &--header {
+    white-space: nowrap;
+  }
   &--form {
     text-transform: uppercase;
     font-family: 'sansun', Times, serif;
@@ -11,10 +14,57 @@
     font-family: 'sansun', Times, serif;
     font-size: 60px;    
   }
-  &--about, &--works-name, &--form-connect {
+  &--about, &--works-name, &--form-connect, &--contacts, &--slider {
     font-family: 'sansun', Times, serif;
     font-size: 35px;
     padding: 25px 0;
     text-transform: uppercase;
+  }
+  &--contacts {
+    padding: 15px 0;
+  }
+  &--slider {
+    @include tablet() {
+      padding-top: 0;
+    }
+    @include phone() {
+      padding-bottom: 20px;
+    }
+  }
+  &--form-connect {
+    @include phone() {
+      padding: 20px 0;
+    }
+  }
+  &--about {
+    padding: 20px 0;
+    @include tablet() {
+      font-size: 21px;
+    }
+  }
+  &--what-about {
+    line-height: 1.1;
+    @include phone() {
+      font-size: 35px;
+    }
+  }
+  &--works-name {
+    @include tablet() {
+      padding:0 0 20px; 
+    }
+  }
+  &--articles {
+    @include phone() {
+      font-size: 21px;
+    }
+  }
+  &--mentor {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  &--works {
+    @include phone() {
+      font-size: 34px;
+    }
   }
 }
